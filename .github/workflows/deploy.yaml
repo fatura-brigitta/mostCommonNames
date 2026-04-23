@@ -43,4 +43,4 @@ jobs:
       - name: Deploy
         run: |
           kubectl apply -f k8s/deployment.yaml
-          kubectl rollout restart deployment password-verifier
+          kubectl rollout restart deployment most-common-names
