@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: most-common-names
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: most-common-names
+  template:
+    metadata:
+      labels:
+        app: most-common-names
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/fatura-brigitta/most-common-names:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: ghcr-auth-token
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: most-common-names-svc
+spec:
+  selector:
+    app: most-common-names
+  ports:
+    - port: 80
+      targetPort: 3000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: most-common-names-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: most-common-names-fatura-brigitta.jcloud.jedlik.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: most-common-names-svc
+                port:
+                  number: 80
