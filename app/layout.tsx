@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Password verify",
-  description: "Password verifying",
+  title: "MostCommonNames",
+  description: "MostCommonNames",
 };
 
 export default function RootLayout({
