@@ -1,6 +1,6 @@
 export const namesData = {
   "2025": {
-    boys: ["Dominik", "Noel", "Levente", "Máté", "Bence", "Milán", "Zalán", "Ádám", "Marcell", "Olivér"],
+    boys: ["Zénó", "Xavér", "Filip", "Ludvig", "Bence", "Milán", "Zalán", "Ádám", "Marcell", "Olivér"],
     girls: ["Hanna", "Anna", "Luca", "Zoé", "Léna", "Emma", "Zsófia", "Boglárka", "Lili", "Mira"]
   },
 

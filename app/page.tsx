@@ -68,7 +68,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="bg-white/90 backdrop-blur p-8 rounded-2xl shadow-2xl w-[420px] animate-fadeIn">
 
-        <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">
+        <h1 className="text-2xl font-bold mb-6 text-center text-red-600">
           Népszerű nevek
         </h1>
 
